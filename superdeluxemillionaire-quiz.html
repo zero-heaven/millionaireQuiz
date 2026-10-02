@@ -172,7 +172,6 @@ h1 { font-size: 1.5rem; color: var(--accent); text-shadow: 0 0 8px var(--accent-
   <h1>百萬富翁 <span style="font-size:0.8rem; color:#888;" id="stageLevel">觀迎光臨</span></h1>
   <div style="display:flex; align-items:center; gap:15px;">
     <div class="vol-control">🎵 <input type="range" id="vol-slider" min="0" max="1" step="0.1" value="0.4" onchange="updateVolume(this.value)"></div>
-    <button class="btn" onclick="window.location.href='index.html';">主頁</button>
     <button class="btn" onclick="resetGame()">開始</button>
   </div>
 </header>
@@ -5681,5 +5680,7 @@ window.addEventListener('load', function() {
   try { initUI(); renderLeaderboard(); resetGame(); } catch(e) { console.error(e); }
 });
 </script>
+<a href="index.html">回到主頁</a>
+
 </body>
 </html>
