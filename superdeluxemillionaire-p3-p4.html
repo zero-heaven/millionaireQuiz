@@ -1,15 +1,35 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-HK">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>誰想成為百萬富翁 - Deluxe Music Edition (Fixed Smooth Audience)</title>
 <style>
-    /* 同時針對所有連結狀態進行設定 */
-    a, a:visited, a:hover, a:active {
-      color: white !important;         /* 強制將字體顏色設為白色 */
-      text-decoration: none !important; /* 移除超連結的底線 */
-    }
+/* Unvisited link */
+a:link {
+    color: var(--text-main);
+    font-family: 'Noto Sans TC', "Segoe UI", Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Visited link */
+a:visited {
+    color: white;
+}
+
+/* Mouse over link */
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+/* Selected/Clicked link */
+a:active {
+    color: white;
+    text-decoration: none;
+}    
 
 :root {
   --primary: #050618; --secondary: #0e1154; --accent: #ffd700;
@@ -226,6 +246,7 @@ const SAFE_LINES = "4,9".split(",").map(Number);
 
 //set your audio sources if available
 const audioWin = new Audio("sounds/win.mp3");
+const audioTimesup = new Audio("sounds/TimesUp.mp3");
 const audioAudience = new Audio("sounds/audience.mp3");
 const audioPhone = new Audio("sounds/phone.mp3");
 const audioLifeline = new Audio("sounds/lifeline.mp3");
@@ -242,6 +263,7 @@ audioLifeline.volume = val * 0.5;
 audioPhone.volume = val * 0.5;
 audioAudience.volume = val * 0.5;
 audioWin.volume = val * 0.7;
+audioTimesup.volume = val * 0.5;
 }
 
 //Database
@@ -1973,6 +1995,7 @@ function startOrResumeTimer() {
     updateTimerUI();
     if (timeLeft <= 0) {
       clearInterval(timerInterval); timerInterval = null;
+        try { audioTimesup.play(); } catch(e){}
       gameOver(true);
     }
   }, 1000);
@@ -2316,7 +2339,7 @@ window.addEventListener('load', function() {
   try { initUI(); renderLeaderboard(); resetGame(); } catch(e) { console.error(e); }
 });
 </script>
+<a href="index.html">回到主頁</a>
 
-<a href="index.html">返回首頁</a>
 </body>
 </html>

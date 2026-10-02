@@ -5,11 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>榮譽富翁 — 豪華版</title>
 <style>
-    /* 同時針對所有連結狀態進行設定 */
-    a, a:visited, a:hover, a:active {
-      color: white !important;         /* 強制將字體顏色設為白色 */
-      text-decoration: none !important; /* 移除超連結的底線 */
-    }
+/* Unvisited link */
+a:link {
+    color: var(--text-main);
+    font-family: 'Noto Sans TC', "Segoe UI", Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Visited link */
+a:visited {
+    color: white;
+}
+
+/* Mouse over link */
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+/* Selected/Clicked link */
+a:active {
+    color: white;
+    text-decoration: none;
+}    
 
 :root{
   --bg-1:#04101a;
@@ -2293,7 +2313,7 @@ window.onload = function(){
   const tb = document.getElementById('takeaway-btn'); if(tb) tb.disabled = false;
 };
 </script>
+<a href="index.html">回到主頁</a>
 
-<a href="index.html">返回首頁</a>
 </body>
 </html>
