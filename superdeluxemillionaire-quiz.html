@@ -1,10 +1,36 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-HK">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>誰想成為百萬富翁 - Deluxe Music Edition (Fixed Smooth Audience)</title>
 <style>
+/* Unvisited link */
+a:link {
+    color: var(--text-main);
+    font-family: 'Noto Sans TC', "Segoe UI", Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Visited link */
+a:visited {
+    color: white;
+}
+
+/* Mouse over link */
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+/* Selected/Clicked link */
+a:active {
+    color: white;
+    text-decoration: none;
+}    
+
 :root {
   --primary: #050618; --secondary: #0e1154; --accent: #ffd700;
   --accent-glow: rgba(255, 215, 0, 0.3); --correct: #00ff66; --wrong: #ff3333;
@@ -5650,5 +5676,6 @@ window.addEventListener('load', function() {
   try { initUI(); renderLeaderboard(); resetGame(); } catch(e) { console.error(e); }
 });
 </script>
+<a href="index.html">回到主頁</a>
 </body>
 </html>
