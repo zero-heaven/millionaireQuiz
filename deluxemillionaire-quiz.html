@@ -7,9 +7,9 @@
 <style>
 /* Unvisited link */
 a:link {
-    color: var(--text-main);
+    color: white;
     font-family: 'Noto Sans TC', "Segoe UI", Roboto, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
 }
@@ -256,6 +256,7 @@ body{
             <button id="takeaway-btn" class="ctrl-btn" onclick="takeaway()">見好就收 (中途拿獎金)</button>
             <button class="ctrl-btn" onclick="openRankModal()">🏆 查看前十名排行榜</button>
             <button class="ctrl-btn secondary" onclick="resetGame()">重新開始</button>
+            <button class="ctrl-btn secondary" onclick="window.location.href='index.html';">回到主頁</button>
           </div>
         </div>
       </section>
@@ -5653,7 +5654,5 @@ window.onload = function(){
   const tb = document.getElementById('takeaway-btn'); if(tb) tb.disabled = false;
 };
 </script>
-<a href="index.html">回到主頁</a>
-
 </body>
 </html>
